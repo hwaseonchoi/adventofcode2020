@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+## Report Repair
+
 def find2020():
     with open('input.txt') as file1:
         for i in file1:
@@ -10,4 +12,4 @@ def find2020():
                     if x+y == 2020:
                         return x*y
 
-find2020()
+print(find2020())
