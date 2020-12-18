@@ -2,7 +2,7 @@
 
 ## Day 3: Toboggan Trajectory
 
-def toboggan():
+def toboggan(right = 3, down =1):
     # Initialize variables
     matrix = []
     trees = 0
@@ -19,12 +19,18 @@ def toboggan():
 
     # Calculate tree occurence
     while True:
-        x += 1
+        x += down
         if x >= len(matrix):
             break;
-        y = (y+3) % len(matrix[x])
+        y = (y+right) % len(matrix[x])
         if (matrix[x][y] == '#'):
             trees += 1
     return trees
 
 print(toboggan())
+
+product = 1
+for pair in [(1,1), (3,1), (5,1), (7,1), (1,2)]:
+    print(pair)
+    product *= toboggan(pair[0], pair[1])
+print(product)
